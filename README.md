@@ -17,6 +17,7 @@ The Node Agent is a lightweight Windows service that transforms idle desktop com
 - **Fault Tolerance**: Handles connection drops and system shutdowns gracefully
 
 ## Technical Details
+- **Tech Stack**: Python + PyInstaller
 - Windows service implementation for seamless operation
 - Asynchronous communication with the Job Server
 - Local job processing with configurable resource limits
