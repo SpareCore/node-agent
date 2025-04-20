@@ -1,0 +1,64 @@
+# GoPine Node Agent Default Configuration
+
+node_agent:
+  # Agent version
+  version: "0.1.0"
+  
+  # Connection settings for the job server
+  connection:
+    server_url: "http://localhost:8080"
+    websocket_url: "ws://localhost:8081"
+    reconnect_interval_seconds: 30
+    heartbeat_interval_seconds: 60
+    max_reconnect_attempts: 10
+  
+  # Resource management settings
+  resources:
+    max_cpu_percent: 80
+    max_memory_percent: 70
+    min_free_disk_space_mb: 1000
+    concurrent_jobs: 2
+  
+  # Job processing settings
+  job_processing:
+    work_dir: "/tmp/gopine"  # This will be overridden with a platform-specific path
+    cleanup_after_job: true
+    timeout_safety_margin_seconds: 60
+  
+  # Time scheduling settings
+  scheduling:
+    working_hours_only: false  # Set to true to only process jobs during specified hours
+    working_hours:
+      start: "18:00"  # 6 PM (after work hours)
+      end: "08:00"    # 8 AM (before work hours)
+    working_days:
+      - Monday
+      - Tuesday
+      - Wednesday
+      - Thursday
+      - Friday
+  
+  # Logging settings
+  logging:
+    level: "info"  # debug, info, warning, error, critical
+    file: null  # Set to a file path to enable file logging
+    max_size_mb: 10
+    max_files: 5
+
+# Job-specific settings
+job_types:
+  # OCR job settings
+  ocr:
+    enabled: true
+    engines:
+      - tesseract
+    tesseract_path: null  # Auto-detected
+    default_languages:
+      - eng
+    default_dpi: 300
+  
+  # PDF parsing job settings
+  pdf_parse:
+    enabled: true
+    max_pages: 500
+    extraction_timeout_seconds: 1800

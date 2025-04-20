@@ -1,0 +1,26 @@
+# Core dependencies
+pydantic>=2.0.0,<3.0.0
+requests>=2.28.0,<3.0.0
+websockets>=11.0.0,<12.0.0
+pywin32>=306; sys_platform == 'win32'
+psutil>=5.9.0,<6.0.0
+Pillow>=10.0.0,<11.0.0
+pypdf2>=3.0.0,<4.0.0
+pytesseract>=0.3.10,<0.4.0
+tqdm>=4.66.0,<5.0.0
+colorlog>=6.7.0,<7.0.0
+schedule>=1.2.0,<2.0.0
+pyinstaller>=6.0.0,<7.0.0
+
+# OCR dependencies
+poppler-utils>=23.11.0,<24.0.0
+tesseract>=5.3.0,<6.0.0
+
+# PDF processing dependencies
+tabula-py>=2.8.0,<3.0.0
+camelot-py>=0.10.0,<0.11.0
+
+# Dev dependencies
+pylint>=3.0.0,<4.0.0
+black>=23.10.0,<24.0.0
+pyright>=1.1.330,<2.0.0
