@@ -1,7 +1,7 @@
-# GoPine Node Agent
+# Node Agent
 
 ## Overview
-The Node Agent is a lightweight Windows service that transforms idle desktop computers into powerful nodes in the GoPine distributed computing network. It runs silently in the background, leveraging unused CPU and RAM resources to process computation jobs.
+The Node Agent is a lightweight Windows service that transforms idle desktop computers into powerful nodes in the SpareCore distributed computing network. It runs silently in the background, leveraging unused CPU and RAM resources to process computation jobs.
 
 ## Purpose
 - Harnesses underutilized computing resources on organizational desktop PCs
@@ -38,19 +38,19 @@ The Node Agent is a lightweight Windows service that transforms idle desktop com
 ### Installation
 1. Clone the repository
 2. Install dependencies: `pip install -r requirements.txt`
-3. Install as a Windows service: `python -m gopine_node_agent --install-service`
+3. Install as a Windows service: `python -m sparecore_node_agent --install-service`
 
 ### Configuration
 Configuration is done through a YAML file, which can be specified when starting the agent:
 
 ```bash
-python -m gopine_node_agent --config path/to/config.yaml
+python -m sparecore_node_agent --config path/to/config.yaml
 ```
 
 ### Windows Service Management
-- Install service: `python -m gopine_node_agent --install-service`
-- Uninstall service: `python -m gopine_node_agent --uninstall-service`
-- Run as console application: `python -m gopine_node_agent`
+- Install service: `python -m sparecore_node_agent --install-service`
+- Uninstall service: `python -m sparecore_node_agent --uninstall-service`
+- Run as console application: `python -m sparecore_node_agent`
 
 ## Building with PyInstaller
 To create a standalone executable:
@@ -71,9 +71,9 @@ This will create both a standard executable and a Windows service executable in 
 
 ### Project Structure
 ```
-gopine-node-agent/
+sparecore-node-agent/
 ├── src/
-│   └── gopine_node_agent/
+│   └── sparecore_node_agent/
 │       ├── api/             # Communication with the job server
 │       ├── assets/          # Icons and resources
 │       ├── config/          # Configuration handling
